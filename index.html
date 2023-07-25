@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function loadUsers() {
+            // 여기 함수에서 GET http://localhost:8080/user를 호출하게 만들거에요!!
+            $.ajax({
+                url: "http://localhost:8080/user",
+                type: "GET",
+                success: function(response) {
+                    console.log(response);
+                }
+            })
+        }
+    </script>
+
+</head>
+<!-- 버튼을 만들어 버튼을 누르면 GET /user 정보 가져오게 코딩-->
+<body>
+    <button onclick="loadUsers()">불러오기</button>
+<ui id="user-list">
+
+</ui>
+</body>
+</html>
